@@ -1,8 +1,7 @@
 export default class ReturnList {
   constructor(body) {
-    this.doctorArray = arrayMaker(body);
+    this.docArray = arrayMaker(body);
   }
-  
 }
 
 
