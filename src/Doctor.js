@@ -22,7 +22,6 @@ function accepts(docReturn) {
 }
 
 function languages(array) {
-  console.log(array);
   let languages = array.practices[0].languages;
   let newString = [];
   for(let i=0; i < languages.length; i++) {

@@ -7,8 +7,10 @@ import Doctor from './Doctor.js';
 import DocProfile from './DocProfile';
 
 $(document).ready(function(){
-  let userIssue = "heart";
-  let userDocName = "";
+  $(".docForm").submit(function(event){
+    event.preventDefault();
+  let userIssue = $("input[name='userIssue'").val();
+  let userDocName = $("input[name='userDocName'").val();
   let userLattitude = 45.5122;
   let userLongitude = -122.6587;
   let userRange = 25;
@@ -19,7 +21,13 @@ $(document).ready(function(){
   promise.then(function(response){
     let body = JSON.parse(response);
     let docReturn = body.data;
-    displayData(docReturn);
+    console.log(docReturn);
+    if(docReturn.length > 0){
+      $(".displayData").text("");
+      displayData(docReturn);
+    } else {
+      $(".displayData").text("Sorry, no doctors met your criteria.");
+    }
   })
   function displayData(docReturn) {
     for(let i=0; i < docReturn.length; i++){
@@ -27,13 +35,9 @@ $(document).ready(function(){
       $(".displayData").append(`<li class='doctorEntry'><div class="card" width:200px><div class="card-body"><img src="${doctor.pictureURL}" alt="photo of ${doctor.docName}" width:180px>
       <h5 class="card-title">${doctor.docName}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${doctor.docTitle}</h6><ul>` +
-      `<li>Languages: ${doctor.languages}</li><li>Address: ${doctor.address}</li>` + `<li>Phone Numbers: ${doctor.number}</li><li>Accepting New Patients: ${doctor.accepts}</li></ul></div></div></li>`);
+      `<li>Languages: ${doctor.languages}</li><li>Address: ${doctor.address}</li>` + `<li>Phone Number: ${doctor.number}</li><li>Accepting New Patients: ${doctor.accepts}</li></ul></div></div></li>`);
 
-    }
-  }
-})
-
-
-//
-//
-// <li>Website:<a href="${docReturn[i].practices[0].website}" class="card-link">${docReturn[i].practices[0].website}</a></li>
+        }
+      }
+    })
+  });
