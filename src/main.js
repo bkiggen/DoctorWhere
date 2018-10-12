@@ -5,12 +5,16 @@ import $ from 'jquery';
 import DocSearch from './DocSearch.js';
 
 $(document).ready(function(){
-  let userIssue = $(".userIssue").val();
-  let userDocName = $(".userDoctorName").val();
-  // let userLocation = $(".userLocation").val();
+  let userIssue = "heart attack";
+  let userDocName = "Beckerman";
+  let userLattitude = 45.5122;
+  let userLongitude = -122.6587;
+  let userRange = 25;
 
-  let promise = docQuery.docQuery();
-  promise.then(function(){
+  let docQuery = new DocSearch();
+
+  let promise = docQuery.docQuery(userIssue, userDocName, userLattitude, userLongitude, userRange);
+  promise.then(function(response){
     let body = JSON.parse(response);
     console.log(body);
   })
