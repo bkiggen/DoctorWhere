@@ -1,5 +1,16 @@
 export default class ReturnList {
   constructor(body) {
-    // this.doctorArray = 
+    this.doctorArray = arrayMaker(body);
   }
+  
+}
+
+
+
+function arrayMaker(body) {
+  let docArray = [];
+  for(let i=0; i < body.data.length; i++) {
+    docArray.push(body.data[i]);
+  }
+  return docArray;
 }

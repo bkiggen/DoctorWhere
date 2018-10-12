@@ -6,7 +6,7 @@ import DocSearch from './DocSearch.js';
 import ReturnList from './ReturnList.js';
 
 $(document).ready(function(){
-  let userIssue = "heart attack";
+  let userIssue = "heart";
   let userDocName = "";
   let userLattitude = 45.5122;
   let userLongitude = -122.6587;
@@ -18,5 +18,6 @@ $(document).ready(function(){
   promise.then(function(response){
     let body = JSON.parse(response);
     let docList = new ReturnList(body);
+    console.log(docList.doctorArray);
   })
 })
