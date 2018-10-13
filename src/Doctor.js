@@ -1,8 +1,3 @@
-//hide api apiKey
-//website
-
-
-
 export default class Doctor {
   constructor(docReturn) {
     this.accepts = accepts(docReturn);
@@ -24,9 +19,7 @@ function website(docReturn) {
   }
 }
 
-
 function accepts(docReturn) {
-
   if (docReturn.practices[0].accepts_new_patients === true){
     docReturn = "yes";
   } else {
@@ -42,5 +35,4 @@ function languages(array) {
     newString.push(languages[i].name);
     return newString;
   }
-
 }

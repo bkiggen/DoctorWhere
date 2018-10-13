@@ -21,7 +21,6 @@ $(document).ready(function(){
   promise.then(function(response){
     let body = JSON.parse(response);
     let docReturn = body.data;
-    console.log(docReturn);
     if(docReturn.length > 0){
       $(".displayData").text("");
       displayData(docReturn);
