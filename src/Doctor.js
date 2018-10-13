@@ -1,3 +1,8 @@
+//hide api apiKey
+//website
+
+
+
 export default class Doctor {
   constructor(docReturn) {
     this.accepts = accepts(docReturn);
@@ -7,6 +12,15 @@ export default class Doctor {
     this.languages = languages(docReturn);
     this.number = docReturn.practices[0].phones[0].number
     this.address = `${docReturn.practices[0].visit_address.street},  ${docReturn.practices[0].visit_address.city}, ${docReturn.practices[0].visit_address.state}, ${docReturn.practices[0].visit_address.zip}`;
+    this.website = website(docReturn);
+  }
+}
+
+function website(docReturn) {
+  if(docReturn.practices[0].website !== undefined){
+    return `<a href="${docReturn.practices[0].website}">link</a>`
+  } else {
+    return "none"
   }
 }
 

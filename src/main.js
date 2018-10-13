@@ -35,7 +35,7 @@ $(document).ready(function(){
       $(".displayData").append(`<li class='doctorEntry'><div class="card" width:200px><div class="card-body"><img src="${doctor.pictureURL}" alt="photo of ${doctor.docName}" width:180px>
       <h5 class="card-title">${doctor.docName}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${doctor.docTitle}</h6><ul>` +
-      `<li>Languages: ${doctor.languages}</li><li>Address: ${doctor.address}</li>` + `<li>Phone Number: ${doctor.number}</li><li>Accepting New Patients: ${doctor.accepts}</li></ul></div></div></li>`);
+      `<li>Languages: ${doctor.languages}</li><li>Website: ${doctor.website}</li><li>Address: ${doctor.address}</li>` + `<li>Phone Number: ${doctor.number}</li><li>Accepting New Patients: ${doctor.accepts}</li></ul></div></div></li>`);
 
         }
       }
