@@ -24,9 +24,9 @@ $npm run start
 
 
 ## Technologies Used
-_This software was created using HTML, CSS, javascript, and jQuery _
+_This software was created using HTML, CSS, javascript, and jQuery_
 
-##Support and contact details
+## Support and contact details
 For inquiries, issues, or contributions, please contact Ben Kiggen at benkiggen@gmail.com
 
 ## License
