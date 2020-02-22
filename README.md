@@ -1,4 +1,4 @@
-# FOCUS Workspace
+# Doctor Where
 
 A portal through which to find doctors in Portland, OR.
 
@@ -7,7 +7,7 @@ By Ben Kiggen
 ## Description
 This web app was created to satisfy the requirements of the Epicodus Friday project, class 3, week 2. The aim is to provide information on doctors when doctor name or area of concern is provided. It makes use of an API that accesses a national database of medical providers.
 
-##Prerequisites
+## Prerequisites
 
 Node Package Manager
 
